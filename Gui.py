@@ -32,9 +32,10 @@ def Gui():
                         texto = input("Ingrese la descripcion: ")
                         metodos = input("Metodos: ")
                         fecha = input("Fecha: ")
-                        api.guardarInfo(token, api.generarAlarma(token, texto, metodos, fecha))
+                        nuevaAlarma = api.generarAlarma(token, texto, metodos, fecha)
+                        api.guardarInfo(token, nuevaAlarma)
                     elif opcion1 == '2':
-                        api.mostrarAlarmas(token)
+                        print(api.mostrarAlarmas(token))
                     elif opcion1 == '3':
                         idDelete = input("Id de la alarma a eliminar: ")
                         api.eliminarAlarma(token, idDelete)
